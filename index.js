@@ -84,6 +84,24 @@ for(var i=0; i<num;
     }
 
 
+    let j=20;
+for(vari=20; i<num;i++ ){
+
+    let j=20;
+    if(i%2==0){
+        let hello=1000;
+        console.log(i);
+        console.log(hello);
+
+    }
+    console.log("inner"+j);
+
+}
+console.log("outer"+j);
+console.log("value of i is "+i);
+console.log(hello); //erroe dega hello is not defined
+
+
 
 
 
