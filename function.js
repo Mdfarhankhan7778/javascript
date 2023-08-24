@@ -69,5 +69,6 @@ let additionIIFE = (function add(a,b){
 
 })(20,30);
 
-console.log(additionIIFE);
+// console.log(additionIIFE);
+// console.log(additionIIFE(20,30));
 
