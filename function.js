@@ -45,3 +45,29 @@ let sayHi=function(){
 console.log("line 54\n" +sayHi);
 sayHi();
 
+let sayBye = function (){
+    console.log("buy guys");
+
+
+};
+console.log("line 53\n" + sayHi);
+sayHi();
+console.log("line 55\n" + sayBye);
+sayBye();
+
+
+// 3) IIFE -> imediately invoke function expression 
+
+function add(a,b) {
+    return a+b
+}
+add (2,3);
+
+let additionIIFE = (function add(a,b){
+    console.log(a+b);
+
+
+})(20,30);
+
+console.log(additionIIFE);
+
