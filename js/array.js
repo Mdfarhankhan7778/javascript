@@ -45,8 +45,13 @@ console.log(cars);
     [4,5,6],
     [7,8,9]
  ];
- console.log(array2d);
- console.table(array2d);
+ // ["a","b","c"] array of strings
+ // [1.2.3] array of number
+ console.log(array2d); // prints of 2d array
+ console.table(array2d); // prints 2d array in the form of table
+ let res = array2d[1]; // [4,5,6]
+ console.log(res);
+ console.log(res[2]);  // 6
  console.log(array2d[1][2]);
  
 
