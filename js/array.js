@@ -53,7 +53,13 @@ console.log(cars);
  console.log(res);
  console.log(res[2]);  // 6
  console.log(array2d[1][2]);
- 
+ console.log(array2d[1][3]); // undefined
 
+ console.log(array2d.length);  // number of rows in a 2d array > 4
+ console.log(array2d[1].length); // number of colums in a 2d array > 3
+
+ // how to put value in 2d array
+ array2d[1][1] = false;
+console.table(array2d);
 
 
