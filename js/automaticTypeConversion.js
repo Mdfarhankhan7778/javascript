@@ -9,4 +9,4 @@ console.log("5"-1);  // 5-1 = 4 -> 5 will be change into intrger
 console.log(null*"5"); // 0 anything multiplied by zero is obiosly 0
 
 console.log("ten"*3); // NAN  -- "ten" string cannot be mapped to a number like "5" can be mapped to number 5 hence the output is NAN
-console.log("10"*3);
+console.log("10"*3);  // 30
