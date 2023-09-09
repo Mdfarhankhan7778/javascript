@@ -14,3 +14,4 @@ console.log(data);
 //const abc= require("../js/temp");
 // require method , goes to the file that is needed to be required .executes that file.
 // console.log(abc);
+
