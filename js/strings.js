@@ -66,6 +66,9 @@ console.log(trimstr.trim());  // remove starting and ending whitespaces
 console.log(trimstr.trim().length);
 
 
-
+var str = "hello my name is farhan khan";
+console.log(str);
+var a = str.split(""); // devides strings on the basis of argument and puts them in an array
+console.log(a);
 
 

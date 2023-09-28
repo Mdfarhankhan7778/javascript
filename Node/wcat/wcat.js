@@ -11,9 +11,16 @@ let filesArr = [];
 let optionsArr = [];
 // -------------------- placed files path in fileArr -----------------------
 for(let i = 0; i<inputArr.length;i++){
-    filesArr.push(inputArr[i].charAt(0));
+    let firstchar = inputArr[i].charAt(0);
+    if(firstchar ==`-`){
 
 }
+else{
+    filesArr.push(inputArr[i]);
+}
+}
+
+
 // console.log("file to be read are "+filesArr);
 
 //==============================check is all the files are present
@@ -21,16 +28,17 @@ for(let i = 0; i<inputArr.length;i++){
 for(let i = 0; i<filesArr.length; i++){
     let doesExist = fs.existsSync(filesArr[i]);
     if(!doesExist){
-        console.log("Files does not exist");
-        return;
+        console.log("one or more files do not exist");
+        process.exit();
     }
-}
+    
+    }
+
 
 // ======================content read and appending starts
 let content = "";
 for(let i=0; i<filesArr.length; i++){
-    let fileContent = fs.readFileSync(filesArr[i]);
-    content=content + fileContent+"\r\n";
+    
 
 }
 console.log(content);
@@ -39,16 +47,21 @@ let contentArr = content.split("\r\n");
 console.table(contentArr);
 
 // check -s is present or not
+let tempArr = [];
 let isSpresent= optionsArr.includes("-s");
 if(isSpresent){
     for(let i=1;i<contentArr.length;i++){
-        if(contentArr[i]=="" && contentArr[i-1] == ""){
+        if(contentArr[i] =="" && contentArr[i-1] == ""){
             contentArr[i] = null;
+        }
+        else if (contentArr[i] == "" && contentArr[i-1] == null){
+            contentArr[i] = null;
+
         }
 
     }
     console.table(contentArr);
-    let tempArr = [];
+    
     // push everything in tempArr except null
 for(let i=0;i<contentArr.length;i++){
     if(contentArr[i]!=null){

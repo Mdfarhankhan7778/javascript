@@ -17,7 +17,7 @@ function organize(srcPath){
        // console.log("source path is ",srcPath);
     }
 
-    let organizedFiles = path.join(srcPath,"organized-files");
+    let organizedFiles = path.join(srcPath,"organized_files");
     console.log("organized files folder path is", organizedFiles);
     if(fs.existsSync(organizedFiles) == false){ 
          // organizedFiles nam ka folder exist nhi karta to ek folder bana do warna rahne do
@@ -26,5 +26,46 @@ function organize(srcPath){
     else
         console.log(`folder already exists`);
     
+
+
+    // 3. scan the entire srcpath(downloads folder in this case)
+
+    // reads the content of the directory -> bascally reads the names of files present in directory
+
+    let allFiles = fs.readdirSync(srcPath);
+    console.log(allFiles);
+
+    //4) traverse over all the files and classify them on the basis of their extention (.pdf,.mp3)
+
+    for(let i=0; i<=allFiles.length;i++){
+       // let ext = allFiles[i].split(".")[1];
+       //let exe = path.extname(allFiles[i]);
+       // console.log(ext);
+
+       let fullpathOfFile = path.join(srcPath,allFiles[i]);
+       // console.log(fullPathOfFile)
+
+       let isFile = fs.lstatSync(fullpathOfFile).isFile();
+       console.log(allFiles[i]+" is "+isFile);
+       if(isFile){
+
+        let exe = path.extname(allFiles[i]).split(".")[1];
+        let folderName = getFolderName(exe);
+
+        copyFileToDest(srcPath,fullPathOfFile,folderName);
+       }
+
+
+
+    }
 }
-organize();
+  function getFolderName(srcPath){
+    return folderName;
+  }
+
+  function copyFileToDest(srcPath,fullPathOfFile,folderName){
+    
+
+  }
+let srcPath= "\Users\Dell\OneDrive\Desktop\pepcoding\Node\fileOrganizer\download"
+organize(srcPath);
